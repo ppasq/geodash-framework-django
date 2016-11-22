@@ -298,13 +298,16 @@ class GeoDashMetadataWriter():
             self.write_line("");
 
     def write_filters(self, grep=None, label=None):
-        for f in grep:
-            f2 = parseFilter(f)
-            attr = self._get_attr_for_path(f2['path'])
-            if f2['operand'] == "between" or f2['operand'] == "btwn":
-                self.write_line(attr.get(label or 'label')+" : "+f2['min']+" - "+f2['max'])
-            else:
-                self.write_line(attr.get(label or 'label')+" : "+f2['value'])
+        if grep:
+            for f in grep:
+                f2 = parseFilter(f)
+                attr = self._get_attr_for_path(f2['path'])
+                if f2['operand'] == "between" or f2['operand'] == "btwn":
+                    self.write_line(attr.get(label or 'label')+" : "+f2['min']+" - "+f2['max'])
+                else:
+                    self.write_line(attr.get(label or 'label')+" : "+f2['value'])
+        else:
+            self.write_line("No filters.")
 
     def write_attributes(self, label=None):
         for attribute in self.dataset['attributes']:

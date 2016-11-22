@@ -217,7 +217,11 @@ class geodash_data_view(View):
                     m.write_line("General")
                     m.write_break()
                     m.write_line("Title:  "+kwargs.get("title", "Population at Risk"))
+                    m.write_break(newline=False, character="-", count=28)
                     m.write_line("URL:  "+settings.SITEURL[:-1]+request.get_full_path())
+                    m.write_break(newline=False, character="-", count=28)
+                    m.write_line("Description")
+                    m.write_line(ds.get("description", "Not provided."))
                     m.write_newlines(1);
                     m.write_break(newline=False, character="=", count=28)
                     m.write_line("Filters (Grep)")
