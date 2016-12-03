@@ -20,9 +20,6 @@ description: ""
 {% block slug %}
 slug: ""
 {% endblock %}
-{% block pages %}
-pages: []
-{% endblock %}
 {% block assets %}
 assets: []
 {% endblock %}

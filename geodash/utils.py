@@ -149,11 +149,11 @@ def grep(**kwargs):
     if obj is None:
         return None
 
-    print "grep"
-    for k, v in kwargs.iteritems():
-        if k != "obj":
-            print k, ":", v,"\n------------\n"
-    print "#############################"
+    #print "grep"
+    #for k, v in kwargs.iteritems():
+    #    if k != "obj":
+    #        print k, ":", v,"\n------------\n"
+    #print "#############################"
 
     attribute_map = {}
     for path in [x['path'] for x in attributes if x.get('path') and (x.get('type') == "integer" or x.get('type') == "int")]:
@@ -170,7 +170,7 @@ def grep(**kwargs):
                 if isinstance(f, basestring):
                     f2 = parseFilter(f)
                     if f2:
-                        print "f2:", f2
+                        #print "f2:", f2
                         for item in obj:
                             #print "item:", item
                             #print "value type: ", attribute_map.get(f2["path"], "string")
