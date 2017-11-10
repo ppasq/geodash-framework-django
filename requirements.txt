@@ -1,6 +1,6 @@
-httplib2
-django
-pyyaml
+httplib2==0.8
+django==1.6.11
+pyyaml==3.10
 django-autocomplete-light==2.3.3
-bleach
-markdown
+bleach==2.0.0
+markdown==2.6.8
